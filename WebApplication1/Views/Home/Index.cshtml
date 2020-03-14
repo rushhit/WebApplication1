@@ -1,8 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewData["Course"] = "Course 1 Lesson 1 ";
+    var tarih = DateTime.Now.ToShortDateString();
+
+    Random rnd = new Random();
+    int sayi = rnd.Next(1, 4);
+    var deger = "#dedede";
+    if (sayi == 3)
+    {
+        deger = "#ff0000";
+    }
 }
 
-<div class="text-center">
-    <h1 class="display-4">Course 1</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4" >@ViewData["Course"]</h1>
+        <h3 class="display-4">@tarih</h3>
+        <div>
+            <h1 style="background-color:@deger"> @sayi</h1>
+        </div>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
